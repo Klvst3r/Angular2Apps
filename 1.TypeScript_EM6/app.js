@@ -1,11 +1,7 @@
 function saludar(nombre) {
-
-  console.log("Hola " + nombre);
-
+    console.log("Hola " + nombre);
 }
-
 var wolverine = {
-  nombre: "Logan"
+    nombre: "Logan"
 };
-
-saludar(wolverine);
+saludar(wolverine.nombre);
