@@ -1,0 +1,293 @@
+Install Angular in Linux
+
+
+We need Install
+
+1. NodeJS: https://nodejs.org/es/
+
+2. Google Chrome:
+https://www.google.es/chrome/browser/desktop/
+
+3. TypeScript:
+http://www.typescriptlang.org/
+
+4. Angular CLI
+https://cli.angular.io/
+https://github.com/angular/angular-cli
+
+5. Ionic 2
+http://ionicframework.com/getting-started/
+
+6. Atom
+https://atom.io/
+Plugins of Atom :
+• Angular 2 Type Script Snippets
+• Atom Bootstrap3
+• Atom Typescript
+• File Icons
+• Platformio Ide Terminal
+• V Bootstrap4
+
+
+------------------------------------------------
+1. Install NodeJS
+https://nodejs.org/es/
+
+Node.js® es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome.
+
+https://nodejs.org/dist/v12.15.0/node-v12.15.0-linux-x64.tar.xz
+
+If you have Ubuntu
+
+How To Install Node.js on Ubuntu
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
+
+
+
+Introduction
+Node.js is a JavaScript platform for general-purpose programming that allows users to build network applications quickly. By leveraging JavaScript on both the front- and back-end, development can be more consistent and designed within the same system.
+
+We should refresh our local package index first, and then install from the repositories:
+
+sudo apt-get update
+sudo apt-get install nodejs
+
+In most cases, you’ll also want to also install npm, which is the Node.js package manager. You can do this by typing:
+
+sudo apt-get install npm
+
+To check which version of Node.js you have installed after these initial steps, type:
+
+nodejs -v
+
+npm uses a configuration file in your home directory to keep track of updates. It will be created the first time you run npm. Execute this command to verify that npm is installed and to create the configuration file:
+
+npm -v
+
+In order for some npm packages to work (those that require compiling code from source, for example), you will need to install the build-essential package:
+
+sudo apt-get install build-essential
+You now have the necessary tools to work with npm packages that require compiling code from source.
+
+
+2. Google Chrome:
+https://www.google.es/chrome/browser/desktop/
+https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-18-04/
+
+1. Download Google Chrome
+Open your terminal either by using the Ctrl+Alt+T keyboard shortcut or by clicking on the terminal icon.
+
+Download the latest Google Chrome .deb package with wget:
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+2. Install Google Chrome
+Installing packages on Ubuntu requires sudo privileges. Make sure you are running the following command as a user with sudo privileges.
+
+Install the Google Chrome .deb package by typing:
+
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+You will be asked to enter your user password.
+Starting Google Chrome
+Now that Google Chrome is installed on your Ubuntu system, you can start it either from the command line by typing google-chrome or by clicking on the Google Chrome icon (Activities -> Google Chrome):
+
+
+--------------------------------------------------
+3. TypeScript:
+http://www.typescriptlang.org/
+
+TypeScript
+JavaScript that scales.
+TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+
+Any browser. Any host. Any OS. Open source.
+
+
+Get TypeScript
+Node.js
+
+The command-line TypeScript compiler can be installed as a Node.js package.
+
+INSTALL
+
+npm install -g typescript
+
+
+/usr/local/bin/tsc -> /usr/local/lib/node_modules/typescript/bin/tsc
+/usr/local/bin/tsserver -> /usr/local/lib/node_modules/typescript/bin/tsserver
++ typescript@3.7.5
+added 1 package from 1 contributor in 41.558s
+
+
+
+Check Version
+
+tsc -v 
+
+COMPILE
+
+tsc helloworld.ts
+
+
+
+-----------------------------
+4. Angular CLI
+https://cli.angular.io/
+https://github.com/angular/angular-cli
+https://angular.io/cli
+
+
+npm install -g @angular/cli
+ng new my-dream-app
+cd my-dream-app
+ng serve
+
+
+Install
+https://angular.io/cli
+
+Install the CLI using the npm package manager:
+content_copy
+	
+	$ npm install -g @angular/cli
+
+
+	 Would you like to share anonymous usage data with the Angular Team at Google under
+Google’s Privacy Policy at https://policies.google.com/privacy? For more details
+ and how to change this setting, see http://angular.io/analytics. (y/N) 
+
+
++ @angular/cli@9.0.1
+added 261 packages from 206 contributors in 808.533s
+
+
+
+
+Basic workflow
+Invoke the tool on the command line through the ng executable.
+
+g help
+ng generate --help
+To create, build, and serve a new, basic Angular project on a development server, go to the parent directory of your new workspace use the following commands:
+
+	
+	ng new my-first-project
+	cd my-first-project
+	ng serve
+
+In your browser, open http://localhost:4200/ to see the new app run. When you use the ng serve command to build an app and serve it locally, the server automatically rebuilds the app and reloads the page when you change any of the source files.
+
+When you run ng new my-first-project a new folder, named my-first-project, will be created in the current working directory. Since you want to be able to create files inside that folder, make sure you have sufficient rights in the current working directory before running the command.
+
+If the current working directory is not the right place for your project, you can change to a more appropriate directory by running cd <path-to-other-directory> first.
+
+Update Angular / cli
+
+https://update.angular.io/
+
+
+Global -g
+
+npm uninstall -g angular-cli @angular/cli
+npm cache clean
+npm install -g @angular/cli@latest
+
+Local project package
+
+rm -rf node_modules dist 
+npm intall --save-dev @angular/cli@latest
+npm install
+ng update
+
+
+
+-----------------------------------------------
+5. Ionic 2
+http://ionicframework.com/getting-started/
+
+
+1. Install Ionic
+
+	npm install -g ionic
+
+First, install Node.js. Then, install the latest Ionic command-line tools in your terminal. Follow the Android and iOS platform guides to install required tools for development.
+
+
+npm WARN deprecated ionic@5.4.16: The Ionic CLI now uses ✨ @ionic/cli ✨ for its package name! 👉 https://twitter.com/ionicframework/status/1223268498362851330
+npm WARN deprecated superagent@4.1.0: Please note that v5.0.1+ of superagent removes User-Agent header by default, therefore you may need to add it yourself (e.g. GitHub blocks requests without a User-Agent header).  This notice will go away with v5.0.2+ once it is released.
+/usr/local/bin/ionic -> /usr/local/lib/node_modules/ionic/bin/ionic
++ ionic@5.4.16
+added 247 packages from 154 contributors in 32.689s
+
+
+2. Start an app
+ionic start myApp tabs
+Create an Ionic App using one of our ready-made app templates, or a blank one to start fresh. Check out the Market for more designs.
+
+For v1 projects, use the --type ionic1 flag.
+
+
+
+3. Run your app
+cd myApp 
+ionic serve
+Much of your app can be built right in the browser with ionic serve. We recommend starting with this workflow.
+
+When you're ready to deploy your app to a real device, check out our Deploying guide.
+
+
+
+-----------------------------------------------
+
+6. Atom
+https://atom.io/
+Plugins of Atom :
+
+• Angular 2 Type Script Snippets
+• Angularjs
+• Atom Bootstrap3
+• Atom Typescript
+• atom-wrap-in-tag
+• color-picker
+• esformatter
+• File Icons
+• Font-awesome-snippetset
+• javascript-snippets
+• Platformio Ide Terminal
+• jquert-snippets
+• linter
+• 	linter-ui-defeault
+• 	hyperclick
+• 	intentions
+• minimap
+• V-Bootstrap4
+
+To install Plug Ins
+
+Atom 
+Edit > Preferences / Packages
+Install
+
+
+Atom Typescript
+Installation
+
+1. Install atom
+2. Install dependences (see below)
+3. apm intall atom-typescript (apm needs git on your path)
+4. Fire up atom.  Open a Typescript file
+
+	Dependences
+Atom-TypeScripti relies on some external packages for providing some of its GUI. You basicallie have two options.
+
+Option 1. Install atom-ide-up package
+
+Option 2. Install following packages:
+	linter
+	linter-ui-defeault
+	hyperclick
+	intentions
+
+
+
