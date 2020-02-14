@@ -1,0 +1,109 @@
+Install NodeJS in Linux Ubuntu
+
+https://nodejs.org/es/
+
+Node.js® es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome.
+
+https://nodejs.org/dist/v12.15.0/node-v12.15.0-linux-x64.tar.xz
+
+If you have Ubuntu
+
+How To Install Node.js on Ubuntu
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-9
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-8
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-10
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server
+
+ntroduction
+Node.js is a JavaScript platform for general-purpose programming that allows users to build network applications quickly. By leveraging JavaScript on both the front- and back-end, development can be more consistent and designed within the same system.
+
+In this guide, we’ll show you how to get started with Node.js on an Ubuntu 
+
+
+How To Install the Distro-Stable Version for Ubuntu
+Ubuntu contains a version of Node.js in its default repositories that can be used to easily provide a consistent experience across multiple systems. We should refresh our local package index first, and then install from the repositories:
+
+sudo apt-get update
+sudo apt-get install nodejs
+
+If the package in the repositories suits your needs, this is all you need to do to get set up with Node.js. In most cases, you’ll also want to also install npm, which is the Node.js package manager. You can do this by typing:
+
+sudo apt-get install npm
+
+This will allow you to easily install modules and packages to use with Node.js.
+
+Because of a conflict with another package, the executable from the Ubuntu repositories is called nodejs instead of node. Keep this in mind as you are running software.
+
+To check which version of Node.js you have installed after these initial steps, type:
+
+nodejs -v
+
+Once you have established which version of Node.js you have installed from the Ubuntu repositories, you can decide whether or not you would like to work with different versions, package archives, or version managers. Next, we’ll discuss these elements along with more flexible and robust methods of installation.
+
+
+
+How To Install Using a PPA
+
+cd ~
+curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
+
+You can inspect the contents of this script with nano (or your preferred text editor):
+
+nano nodesource_setup.sh
+And run the script under sudo:
+
+sudo bash nodesource_setup.sh
+The PPA will be added to your configuration and your local package cache will be updated automatically. After running the setup script from nodesource, you can install the Node.js package in the same way you did above:
+
+sudo apt-get install nodejs
+To check which version of Node.js you have installed after these initial steps, type:
+
+nodejs -v
+
+he nodejs package contains the nodejs binary as well as npm, so you don’t need to install npm separately.
+
+npm uses a configuration file in your home directory to keep track of updates. It will be created the first time you run npm. Execute this command to verify that npm is installed and to create the configuration file:
+
+npm -v
+
+In order for some npm packages to work (those that require compiling code from source, for example), you will need to install the build-essential package:
+
+sudo apt-get install build-essential
+You now have the necessary tools to work with npm packages that require compiling code from source.
+
+Removing Node.js
+You can uninstall Node.js using apt-get or nvm, depending on the version you want to target. To remove the distro-stable version, you will need to work with the apt-get utility at the system level.
+
+To remove the distro-stable version, type the following:
+
+sudo apt-get remove nodejs
+This command will remove the package and retain the configuration files. These may be of use to you if you intend to install the package again at a later point. If you don’t want to save the configuration files for later use, however, then run the following:
+
+sudo apt-get purge nodejs
+This will uninstall the package and remove the configuration files associated with it.
+As a final step, you can remove any unused packages that were automatically installed with the removed package:
+
+sudo apt-get autoremove
+To uninstall a version of Node.js that you have enabled using nvm, first determine whether or not the version you would like to remove is the current active version:
+
+nvm current
+If the version you are targeting is not the current active version, you can run:
+
+nvm uninstall node_version
+
+
+You can now uninstall the current version using the uninstall command above, which will remove all files associated with the targeted version of Node.js except the cached files that can be used for reinstallment.
+
+Conclusion
+As you can see, there are a quite a few ways to get up and running with Node.js on your Ubuntu- Your circumstances will dictate which of the above methods is the best idea for your circumstance. While the packaged version in Ubuntu’s repository is the easiest, the nvm method is definitely much more flexible.
+
+
+
