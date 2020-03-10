@@ -1,0 +1,69 @@
+¿Qué es TypeScript?
+¿Cómo usar TypeScript y utilizar ECMAScript 6?
+Declaración de variables con "let" y constantes "const"
+¿Qué es y para qué sirve el archivo tsconfig.json?
+Uso de los tipos de datos que ofrece TypeScript.
+Strings de multilinea.
+Parámetros obligatorios, por defecto y opcionales.
+Beneficios de las funciones de flecha.
+Uso y creación de interfaces.
+Uso de módulos y ejemplos de los mismos.
+Decoradores de clase.
+Entre otros temas importantes para adentrarnos en Angular 2.
+
+
+
+Configuracion de Typescript
+Para compilar dentro de sublime text
+En la ruta donde esta el archivo .ts
+
+tsc app.ts
+
+escribir 
+tsc app -W
+
+[12:09:51 AM] Starting compilation in watch mode...
+
+[12:09:55 AM] Found 0 errors. Watching for file changes.
+
+Entramos en modo observador, y con esto Typescript estara pendiente de cualquier cambio.
+
+
+Pero si creo un nuevo archivo, por ejemplo
+
+app2.ts
+
+y guardo los cambios pe
+ro no paso nada, no compilo no genero otro archivo, esto es por que la observacion es para el archivo app.ts 
+
+Es el unico de pendiente del cambio
+
+Se puede decir que escuche a todos los archvivos que se vayan creando, aunque la mejor manera es decirle que es un proyecto de Typescript.
+
+Asi que se debe inicializar el proyecto:
+
+tsc -init
+
+Desde este momento, Se crea el archivo tsconfig.json, ahora hay un archivo de configuracion con JSON
+
+
+Ahora en la terminal del editor o en terninal de linux
+al hacer
+tsc 
+
+Esto va a buscar todos los cambios utilizando el compilador, generando el archivo app2.ts a app2.js
+
+
+Y si generamos un archivo
+
+app3.ts
+
+y compilamos con
+
+tsc
+
+esto generara el archivo
+
+app3.js
+
+con solo guardar el archivo
