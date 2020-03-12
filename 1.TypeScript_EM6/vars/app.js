@@ -1,5 +1,5 @@
 var mensaje = "Salut";
 if (true) {
-    var mensaje = "au revoir";
+    var mensaje_1 = "au revoir";
 }
 console.log(mensaje);

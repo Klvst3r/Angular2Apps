@@ -1,10 +1,11 @@
 
 
-var mensaje = "Salut";
+let mensaje = "Salut";
+
 
 
 if (true) {
-    var mensaje = "au revoir";
+    let mensaje = "au revoir";
 }
 
 
